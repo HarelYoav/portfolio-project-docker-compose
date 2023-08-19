@@ -1,0 +1,9 @@
+[submodule "battle_ship_backend"]
+	path = battle_ship_backend
+	url = https://github.com/HarelYoav/battle-ship-back
+[submodule "battle_ship_frontend"]
+	path = battle_ship_frontend
+	url = https://github.com/HarelYoav/battle-ship-front
+[submodule "my-portfolio"]
+	path = my-portfolio
+	url = https://github.com/HarelYoav/my-portfolio
