@@ -11,7 +11,7 @@ services:
         - "443:443"
       networks:
         - backbone
-    nodejs:
+    portfolio:
       container_name: portfolio
       image: portfolio:1.0
       build: ./my-portfolio
