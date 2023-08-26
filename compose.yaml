@@ -1,11 +1,12 @@
 version: "2"
 services:
     nginx:
-      image: portfolio-nginx:1.0
-      build: ./nginx
+      image: portfolio-nginx:latest
+      # build: ./nginx
       container_name: portfolio-nginx
       volumes:
         - ./nginx:/etc/nginx/conf.d
+        - ./nginx/ssl:/etc/ssl
       ports:
         - "80:80"
         - "443:443"
