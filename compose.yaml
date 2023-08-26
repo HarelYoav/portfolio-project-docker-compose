@@ -1,8 +1,8 @@
 version: "2"
 services:
     nginx:
-      image: portfolio-nginx:latest
-      # build: ./nginx
+      image: yoavdocker89/portfolio-nginx:latest
+      build: ./nginx
       container_name: portfolio-nginx
       volumes:
         - ./nginx:/etc/nginx/conf.d
@@ -13,16 +13,16 @@ services:
       networks:
         - backbone
     portfolio:
-      container_name: portfolio
-      image: portfolio:1.0
+      container_name: my-portfolio
+      image: yoavdocker89/my-portfolio:latest
       build: ./my-portfolio
       networks:
         - backbone
       expose: 
         - 80
-    battle-ship:
-      container_name: battle-ship
-      image: battle-ship:1.0
+    battle-ship-frontend:
+      container_name: battle-ship-frontend
+      image: yoavdocker89/battle-ship-frontend:latest
       build: ./battle_ship_frontend
       networks:
         - backbone
@@ -30,7 +30,7 @@ services:
         - 80
     battle-ship-backend:
       container_name: battle-ship-backend
-      image: battle-ship-backend:1.0
+      image: yoavdocker89/battle-ship-backend:latest
       build: ./battle_ship_backend
       networks:
         - backbone

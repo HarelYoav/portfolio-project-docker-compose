@@ -4,21 +4,11 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
-        //  stage('Clone') { 
-
-        //     steps {
-        //         git branch: 'main', url: "https://github.com/HarelYoav/portfolio-project-docker-compose.git"
-        //         echo "empty"
-        //     }
-            
-            
-        // }
-
         stage('Build') { 
             steps { 
                 script{
                      
-                 app = docker.build("yoavdocker89" + "/portfolio-nginx:latest", "${WORKSPACE}/nginx")
+                 app = docker.build("yoavdocker89" + "/portfolio-nginx", "${WORKSPACE}/nginx")
                 }
             }
         }
