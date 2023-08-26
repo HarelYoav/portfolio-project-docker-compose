@@ -1,9 +1,9 @@
 version: "2"
 services:
     nginx:
-      image: yoavdocker89/portfolio-nginx:latest
-      build: ./nginx
-      container_name: portfolio-nginx
+      image: nginx:alpine
+      # build: ./nginx
+      container_name: nginx
       volumes:
         - ./nginx:/etc/nginx/conf.d
         - ./nginx/ssl:/etc/ssl
