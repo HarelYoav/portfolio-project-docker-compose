@@ -17,6 +17,7 @@ pipeline {
         stage('Build') { 
             steps { 
                 script{
+                    echo $(pwd)
                  app = docker.build("yoavdocker89" + "/portfolio-nginx:latest", "/nginx")
                 }
             }
@@ -41,3 +42,10 @@ pipeline {
         }
     }
 }
+
+
+docker run -it -u root -p 8080:8080 -p 50000:50000 \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v $(which docker):/usr/bin/docker \
+-v /var/jenkins_home:/var/jenkins_home \
+--name jenkins jenkins/jenkins:lts
