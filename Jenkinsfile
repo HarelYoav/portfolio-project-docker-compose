@@ -6,10 +6,11 @@ pipeline {
     stages {
          stage('Clone') { 
 
-            // steps {
-            //     git branch: 'main', url: "https://github.com/HarelYoav/portfolio-project-docker-compose.git"
-            // }
-            echo "empty"
+            steps {
+                // git branch: 'main', url: "https://github.com/HarelYoav/portfolio-project-docker-compose.git"
+                echo "empty"
+            }
+            
             
         }
 
