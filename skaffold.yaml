@@ -1,0 +1,25 @@
+apiVersion: skaffold/v4beta6
+kind: Config
+metadata:
+  name: portfolio-project
+build:
+  artifacts:
+    - image: yoavdocker89/battle-ship-backend
+      context: battle_ship_backend
+      docker:
+        dockerfile: Dockerfile
+    - image: yoavdocker89/battle-ship-frontend
+      context: battle_ship_frontend
+      docker:
+        dockerfile: Dockerfile
+    - image: yoavdocker89/my-portfolio
+      context: my-portfolio
+      docker:
+        dockerfile: Dockerfile
+manifests:
+  rawYaml:
+    - k8s/battle-ship-backend-depl.yaml
+    - k8s/battle-ship-frontend-depl.yaml
+    - k8s/ingress-depl.yaml
+    - k8s/portfolio-depl.yaml
+    - k8s/prometeus-ingress.yml
