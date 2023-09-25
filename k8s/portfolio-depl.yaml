@@ -19,7 +19,7 @@ spec:
       containers:
         - name: portfolio
           image: yoavdocker89/my-portfolio:latest
-          # imagePullPolicy: Always
+          imagePullPolicy: Always
           ports:
           - containerPort: 80
       restartPolicy: Always

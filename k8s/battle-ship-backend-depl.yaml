@@ -19,7 +19,7 @@ spec:
       containers:
         - name: battle-ship-backend
           image: yoavdocker89/battle-ship-backend:latest
-          # imagePullPolicy: Always
+          imagePullPolicy: Always
           ports:
           - containerPort: 5000
       restartPolicy: Always

@@ -1,0 +1,24 @@
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:    
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/proxy-body-size: 5m  
+  name: argo-ingress
+  namespace: argocd
+spec:
+  rules:
+    - host: argo.yoavharel.io
+      http:
+        paths:
+        - backend:
+            service:
+              name: argocd-server
+              port: 
+                number: 443
+          path: /
+          pathType: ImplementationSpecific
+
+
+
